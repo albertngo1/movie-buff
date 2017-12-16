@@ -20,7 +20,7 @@ class Search extends React.Component {
           ></input>
         <select onChange={(e) => this.props.searchType(e)}>
           <option value="movie">Movie</option>
-          <option value="actor">Actor</option>
+          <option value="person">Actor</option>
         </select>
       </div>
     )
