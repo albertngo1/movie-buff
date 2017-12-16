@@ -5,11 +5,15 @@
 }
 
 .card-poster {
+  user-select: none;
+  cursor: default;
   width: inherit;
   height: 550px;
 }
 
 .card-details {
+  user-select: none;
+  cursor: default;
   padding: 20px;
   color: white;
   font-family: 'Roboto';
@@ -51,6 +55,7 @@
 
 .property-label {
   text-shadow: 1px white;
+
 }
 
 .property {

@@ -1,6 +1,9 @@
 import React from 'react';
 import Card from './card';
 import Search from './search';
+import Bloodhound from 'bloodhound-js';
+import typeahead from 'typeahead.js'
+import $ from 'jquery';
 
 
 
@@ -53,6 +56,27 @@ class App extends React.Component {
 
   componentDidMount() {
     this.fetchAPI();
+
+    let suggests = new Bloodhound({
+      queryTokenizer: Bloodhound.tokenizers.whitespace,
+      datumTokenizer: Bloodhound.tokenizers.whitespace,
+      remote: {
+        url: `https://api.themoviedb.org/3/search/${this.state.searchType}?query=dun&api_key=37f9aa8b184d38890b9d79b807b3c2a0`,
+        filter: (movies) => {
+          console.log(movies)
+          console.log(movies.results)
+        }
+      }
+    })
+    suggests.initialize();
+
+
+    $('.search-input').typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 2,
+      },
+      {source: suggests.ttAdapter()});
   }
 
 
