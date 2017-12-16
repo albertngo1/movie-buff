@@ -1,0 +1,64 @@
+.card-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-poster {
+  width: inherit;
+  height: 550px;
+}
+
+.card-details {
+  padding: 20px;
+  color: white;
+  font-family: 'Roboto';
+  background-color: rgba(0, 0, 0, .8);
+  border: 2px white solid;
+  height: inherit;
+  width: 600px;
+  height: 506px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  margin-bottom: 4em;
+}
+
+.card-title {
+  font-size: 30px;
+  text-shadow: 1px rgb(246, 246, 246);
+}
+
+.card-tagline {
+  font-size: 20px;
+  color: rgb(71, 255, 79);
+  margin-bottom: 5px;
+}
+
+.card-overview {
+  font-size: 13px;
+}
+
+.card-property-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.property-label {
+  text-shadow: 1px white;
+}
+
+.property {
+  color: rgb(71, 255, 79);
+}
+
+.card-row-1 {
+  display: flex;
+  justify-content: flex-start;
+}
+.card-row-2 {
+  display: flex;
+  justify-content: flex-start;
+}

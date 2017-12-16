@@ -32,19 +32,19 @@ class App extends React.Component {
       })
       .then(data => {
         this.setState({
-          object: {
-            movieId: data.id,
-            movieTitle: data.title,
-            movieGenres: data.genres.map(genre => genre.name),
-            movieOverview: data.overview,
-            movieRuntime: data.runtime,
-            movieStatus: data.status,
-            movieTagline: data.tagline,
-            movieRating: data.vote_average,
-            movieReleaseDate: data.release_date,
-            moviePoster: data.poster_path,
-            movieBackDrop: data.backdrop_path,
-            movieBudget: data.budget,
+          movie: {
+            id: data.id,
+            title: data.title,
+            genres: data.genres.map(genre => genre.name),
+            overview: data.overview,
+            runtime: data.runtime,
+            status: data.status,
+            tagline: data.tagline,
+            rating: data.vote_average,
+            releaseDate: data.release_date,
+            poster: data.poster_path,
+            backdrop: data.backdrop_path,
+            budget: data.budget,
           }
           })
       })
@@ -56,11 +56,10 @@ class App extends React.Component {
 
 
   render() {
-    console.log(this.state);
     return(
       <div>
         <Search searchType={this.searchType} />
-        <Card />
+        <Card movie={this.state.movie} />
       </div>
     )
   }
