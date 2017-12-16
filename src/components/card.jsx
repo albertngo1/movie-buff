@@ -22,6 +22,11 @@ class Card extends React.Component {
       budget = numeral(budget).format('$0,0[.]00');
       boxOffice = numeral(boxOffice).format('$0,0[.]00')
       releaseDate = dateHelper(releaseDate);
+      genres = genres.map((genre, idx) => {
+        return (
+          <span key={`genre-${idx}`} className="genre">{genre}</span>
+        )
+      });
 
       return(
         <div className="card-main">
@@ -29,7 +34,7 @@ class Card extends React.Component {
           <div className="card-details">
             <div className="card-header">
               <div className="card-title">{title}</div>
-              <div className="card-tagline">&quot;{tagline}&quot;</div>
+              <div className="card-tagline">{tagline}</div>
               <div className="card-overview">{overview}</div>
             </div>
             <div className="card-col-container">
@@ -63,6 +68,10 @@ class Card extends React.Component {
                   <span className="property">{status}</span>
                 </div>
               </div>
+            </div>
+            <div>
+              <span className="property-label">Genres:</span>
+              <div className="genre-wrap">{genres}</div>
             </div>
           </div>
         </div>
