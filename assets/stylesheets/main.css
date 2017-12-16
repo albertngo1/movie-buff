@@ -44,6 +44,8 @@
 .card-property-wrapper {
   display: flex;
   flex-direction: column;
+  width: 100px;
+  padding-bottom: 30px;
 }
 
 .property-label {
@@ -54,11 +56,13 @@
   color: rgb(71, 255, 79);
 }
 
-.card-row-1 {
+.card-col-container {
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;
 }
-.card-row-2 {
+
+.card-col {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  width: 200px;
 }

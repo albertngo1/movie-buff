@@ -11,14 +11,16 @@ class Card extends React.Component {
   render() {
 
     if (this.props.movie) {
+      let noData = "-";
       const { movie } = this.props;
       let { budget, genres, overview,
          poster, rating, releaseDate, runtime,
-          status, tagline, title } = movie;
+          status, tagline, title, boxOffice } = movie;
 
       poster = 'https://image.tmdb.org/t/p/w300' + poster;
       title = title.toUpperCase();
       budget = numeral(budget).format('$0,0[.]00');
+      boxOffice = numeral(boxOffice).format('$0,0[.]00')
       releaseDate = dateHelper(releaseDate);
 
       return(
@@ -30,9 +32,9 @@ class Card extends React.Component {
               <div className="card-tagline">&quot;{tagline}&quot;</div>
               <div className="card-overview">{overview}</div>
             </div>
-            <div>
-              <div className="card-row-1">
-                <div className="card-property-wrapper">
+            <div className="card-col-container">
+              <div className="card-col">
+                <div className="card-property-wrapper ">
                   <span className="property-label">Budget:</span>
                   <span className="property">{budget}</span>
                 </div>
@@ -41,7 +43,7 @@ class Card extends React.Component {
                   <span className="property">{rating} / 10</span>
                 </div>
               </div>
-              <div className="card-row-2">
+              <div className="card-col">
                 <div className="card-property-wrapper">
                   <span className="property-label">Release Date:</span>
                   <span className="property">{releaseDate}</span>
@@ -49,6 +51,16 @@ class Card extends React.Component {
                 <div className="card-property-wrapper">
                   <span className="property-label">Runtime:</span>
                   <span className="property">{runtime} minutes</span>
+                </div>
+              </div>
+              <div className="card-col">
+                <div className="card-property-wrapper">
+                  <span className="property-label">Box Office:</span>
+                  <span className="property">{boxOffice}</span>
+                </div>
+                <div className="card-property-wrapper">
+                  <span className="property-label">Status:</span>
+                  <span className="property">{status}</span>
                 </div>
               </div>
             </div>

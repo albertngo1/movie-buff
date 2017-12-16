@@ -38,13 +38,14 @@ class App extends React.Component {
             genres: data.genres.map(genre => genre.name),
             overview: data.overview,
             runtime: data.runtime,
-            status: data.status,
             tagline: data.tagline,
             rating: data.vote_average,
             releaseDate: data.release_date,
             poster: data.poster_path,
             backdrop: data.backdrop_path,
             budget: data.budget,
+            boxOffice: data.revenue,
+            status: data.status,
           }
           })
       })

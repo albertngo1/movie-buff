@@ -17,6 +17,7 @@ span, article, footer, time, small {
 }
 html {
   height: 100%;
+  background-color: black;
 }
 ul {
   list-style: none;
