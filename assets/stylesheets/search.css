@@ -1,0 +1,10 @@
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, .7);
+}

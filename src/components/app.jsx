@@ -62,7 +62,7 @@ class App extends React.Component {
 
     let suggests = new Bloodhound({
       queryTokenizer: Bloodhound.tokenizers.whitespace,
-      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
       remote: {
         url: `https://api.themoviedb.org/3/search/${this.state.searchType}?query=%QUERY&api_key=37f9aa8b184d38890b9d79b807b3c2a0`,
         wildcard: '%QUERY',
@@ -70,7 +70,7 @@ class App extends React.Component {
           return movies.results.map(movie => {
             return {
               id: movie.id,
-              value: movie.title
+              title: movie.title
             }
           })
         }
@@ -85,7 +85,7 @@ class App extends React.Component {
         minLength: 2,
       },
       {
-        display: 'value',
+        display: 'title',
         source: suggests.ttAdapter()
       }
     ).bind('typeahead:select', (e, suggest) => {

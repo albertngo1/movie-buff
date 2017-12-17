@@ -12,14 +12,12 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div>
-        <form>
+      <div className="search-wrapper">
           <input
             placeholder="Search..."
             className="search-input"
             type="text"
             ></input>
-        </form>
         <select onChange={(e) => this.props.searchType(e)}>
           <option value="movie">Movie</option>
           <option value="person">Actor</option>
