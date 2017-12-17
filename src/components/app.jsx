@@ -58,8 +58,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const url = `https://api.themoviedb.org/3/${this.state.searchType}/76341?api_key=37f9aa8b184d38890b9d79b807b3c2a0`;
-    this.fetchAPI(url);
+    this.fetchMovieId(76341);
 
     let suggests = new Bloodhound({
       queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -86,9 +85,10 @@ class App extends React.Component {
         minLength: 2,
       },
       {
+        display: 'value',
         source: suggests.ttAdapter()
       }
-    ).bind('typeahead:select', (ev, suggest) => {
+    ).bind('typeahead:select', (e, suggest) => {
       this.fetchMovieId(suggest.id);
     });
   }
