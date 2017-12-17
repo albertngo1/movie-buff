@@ -10,7 +10,6 @@ class Search extends React.Component {
 
   }
 
-
   render() {
     return (
       <div>
@@ -18,6 +17,7 @@ class Search extends React.Component {
           <input
             placeholder="Search..."
             className="search-input"
+            type="text"
             ></input>
         </form>
         <select onChange={(e) => this.props.searchType(e)}>

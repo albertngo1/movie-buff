@@ -19,16 +19,14 @@ class App extends React.Component {
     }
 
     this.searchType = this.searchType.bind(this);
+    this.fetchMovieId = this.fetchMovieId.bind(this);
   }
 
   searchType(evt) {
     this.setState({searchType: evt.currentTarget.value});
   }
 
-  fetchAPI() {
-
-    const url = "https://api.themoviedb.org/3/movie/76341?api_key=37f9aa8b184d38890b9d79b807b3c2a0";
-
+  fetchAPI(url) {
     fetch(url)
       .then((res) => {
         return res.json();
@@ -54,17 +52,28 @@ class App extends React.Component {
       })
   }
 
+  fetchMovieId(movieId) {
+    const url = `https://api.themoviedb.org/3/${this.state.searchType}/${movieId}?api_key=37f9aa8b184d38890b9d79b807b3c2a0`;
+    this.fetchAPI(url);
+  }
+
   componentDidMount() {
-    this.fetchAPI();
+    const url = `https://api.themoviedb.org/3/${this.state.searchType}/76341?api_key=37f9aa8b184d38890b9d79b807b3c2a0`;
+    this.fetchAPI(url);
 
     let suggests = new Bloodhound({
       queryTokenizer: Bloodhound.tokenizers.whitespace,
-      datumTokenizer: Bloodhound.tokenizers.whitespace,
+      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
       remote: {
-        url: `https://api.themoviedb.org/3/search/${this.state.searchType}?query=dun&api_key=37f9aa8b184d38890b9d79b807b3c2a0`,
+        url: `https://api.themoviedb.org/3/search/${this.state.searchType}?query=%QUERY&api_key=37f9aa8b184d38890b9d79b807b3c2a0`,
+        wildcard: '%QUERY',
         filter: (movies) => {
-          console.log(movies)
-          console.log(movies.results)
+          return movies.results.map(movie => {
+            return {
+              id: movie.id,
+              value: movie.title
+            }
+          })
         }
       }
     })
@@ -76,14 +85,19 @@ class App extends React.Component {
         highlight: true,
         minLength: 2,
       },
-      {source: suggests.ttAdapter()});
+      {
+        source: suggests.ttAdapter()
+      }
+    ).bind('typeahead:select', (ev, suggest) => {
+      this.fetchMovieId(suggest.id);
+    });
   }
 
 
   render() {
     return(
       <div>
-        <Search searchType={this.searchType} />
+        <Search searchType={this.searchType} queryChange={this.queryChange}/>
         <Card movie={this.state.movie} />
       </div>
     )
