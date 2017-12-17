@@ -18,10 +18,22 @@ class Card extends React.Component {
           status, tagline, title, boxOffice } = movie;
 
       poster = 'https://image.tmdb.org/t/p/w300' + poster;
+      
       title = title.toUpperCase();
-      budget = numeral(budget).format('$0,0[.]00');
-      boxOffice = numeral(boxOffice).format('$0,0[.]00')
+
+      if (budget === undefined || budget === 0) {
+        budget = noData
+      } else {
+        budget = numeral(budget).format('$0,0[.]00');
+      }
+      if (boxOffice === undefined || boxOffice === 0) {
+        boxOffice = noData
+      } else {
+        boxOffice = numeral(boxOffice).format('$0,0[.]00');
+      }
+
       releaseDate = dateHelper(releaseDate);
+
       genres = genres.map((genre, idx) => {
         return (
           <span key={`genre-${idx}`} className="genre">{genre}</span>

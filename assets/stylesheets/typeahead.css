@@ -18,6 +18,9 @@
 .tt-hint {
     color: #999;
 }
+.tt-highlight {
+    font-weight: bolder;
+}
 
 .tt-menu {
     width: 422px;
@@ -38,7 +41,8 @@
     padding: 3px 20px;
     font-size: 18px;
     line-height: 24px;
-    background-color: red;
+    background-color: rgb(71, 255, 79);
+    color: black;
 }
 
 .tt-suggestion.tt-is-under-cursor {
