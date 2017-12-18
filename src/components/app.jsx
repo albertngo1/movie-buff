@@ -1,9 +1,6 @@
 import React from 'react';
-import Card from './card';
+import MovieCard from './card';
 import Search from './search';
-import Bloodhound from 'bloodhound-js';
-import typeahead from 'typeahead.js'
-import $ from 'jquery';
 
 
 
@@ -18,11 +15,11 @@ class App extends React.Component {
       searchType: "movie",
     }
 
-    this.searchType = this.searchType.bind(this);
-    this.fetchMovieId = this.fetchMovieId.bind(this);
+    this.searchTypeSelect = this.searchTypeSelect.bind(this);
+    this.fetchId = this.fetchId.bind(this);
   }
 
-  searchType(evt) {
+  searchTypeSelect(evt) {
     this.setState({searchType: evt.currentTarget.value});
   }
 
@@ -52,52 +49,18 @@ class App extends React.Component {
       })
   }
 
-  fetchMovieId(movieId) {
-    const url = `https://api.themoviedb.org/3/${this.state.searchType}/${movieId}?api_key=37f9aa8b184d38890b9d79b807b3c2a0`;
+  fetchId(id) {
+    const url = `https://api.themoviedb.org/3/${this.state.searchType}/${id}?api_key=37f9aa8b184d38890b9d79b807b3c2a0`;
     this.fetchAPI(url);
   }
 
-  componentDidMount() {
-    this.fetchMovieId(76341);
-
-    let suggests = new Bloodhound({
-      queryTokenizer: Bloodhound.tokenizers.whitespace,
-      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
-      remote: {
-        url: `https://api.themoviedb.org/3/search/${this.state.searchType}?query=%QUERY&api_key=37f9aa8b184d38890b9d79b807b3c2a0`,
-        wildcard: '%QUERY',
-        filter: (movies) => {
-          return movies.results.map(movie => {
-            return {
-              id: movie.id,
-              title: movie.title
-            }
-          })
-        }
-      }
-    })
-    suggests.initialize();
-
-
-    $('.search-input').typeahead({
-        highlight: true,
-        minLength: 2,
-      },
-      {
-        display: 'title',
-        source: suggests.ttAdapter()
-      }
-    ).bind('typeahead:select', (e, suggest) => {
-      this.fetchMovieId(suggest.id);
-    });
-  }
-
-
   render() {
     return(
-      <div class="main-wrapper">
-        <Search searchType={this.searchType} queryChange={this.queryChange}/>
-        <Card movie={this.state.movie} />
+      <div className="main-wrapper">
+        <Search searchTypeSelect={this.searchTypeSelect}
+          searchType={this.state.searchType}
+          fetchId={(id) => this.fetchId(id)}/>
+        <MovieCard movie={this.state.movie} />
       </div>
     )
   }

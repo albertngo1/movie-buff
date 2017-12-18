@@ -48,7 +48,7 @@
 
 .card-tagline {
   font-family: 'Lora';
-  font-size: 18px;
+  font-size: 1.6vw;
   color: rgb(71, 255, 79);
   margin-bottom: 5px;
   font-style: italic;
@@ -56,7 +56,7 @@
 
 .card-overview {
   font-family: 'Roboto';
-  font-size: 13px;
+  font-size: 1.1vw;
 }
 
 .card-property-wrapper {
@@ -69,11 +69,12 @@
 .property-label {
   font-family: 'Lora';
   text-shadow: 1px white;
-
+  font-size: 1.2vw;
 }
 
 .property {
   color: rgb(71, 255, 79);
+  font-size: 1.3vw;
 }
 
 .card-col-container {
@@ -90,7 +91,7 @@
 .genre {
   font-family: 'Roboto';
   color: rgb(71, 255, 79);
-  font-size: 13px;
+  font-size: 1.3vw;
   background-color: rgba(255, 255, 255, 0.3);
   border: 1px rgba(255, 255, 255, 0.3) solid;
   padding-left: 2px;

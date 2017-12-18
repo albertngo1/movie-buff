@@ -9,7 +9,6 @@ let backdrop;
 class Card extends React.Component {
 
   render() {
-
     if (this.props.movie) {
       let noData = "-";
       const { movie } = this.props;
