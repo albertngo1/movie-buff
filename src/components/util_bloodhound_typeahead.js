@@ -5,7 +5,7 @@ import $ from 'jquery';
 export const movieAutoComplete = (searchType, fetchMovieId, search) => {
   search.suggests = new Bloodhound({
     queryTokenizer: Bloodhound.tokenizers.whitespace,
-    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+    datumTokenizer: Bloodhound.tokenizers.whitespace,
     remote: {
       url: `https://api.themoviedb.org/3/search/movie?query=%QUERY&api_key=37f9aa8b184d38890b9d79b807b3c2a0`,
       wildcard: '%QUERY',

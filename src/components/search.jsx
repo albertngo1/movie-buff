@@ -1,6 +1,7 @@
 import React from 'react';
 import { movieAutoComplete } from './util_bloodhound_typeahead';
-
+import typeahead from 'typeahead.js'
+import $ from 'jquery';
 
 
 
@@ -19,12 +20,15 @@ class Search extends React.Component {
   componentWillReceiveProps(nextProps) {
 
     if (this.props.searchType !== nextProps.searchType) {
-      this.suggests.clear();
+      document.getElementById('search-input').value = ""
+
+
       switch (nextProps.searchType) {
         case "person":
           this.suggests.remote.url = `https://api.themoviedb.org/3/search/person?query=%QUERY&api_key=37f9aa8b184d38890b9d79b807b3c2a0`;
           this.suggests.remote.transform = (actors) => {
-            actors.results.map(actor => {
+            return actors.results.map(actor => {
+              console.log(actor)
               return {
                 id: actor.id,
                 value: actor.name,
@@ -44,9 +48,7 @@ class Search extends React.Component {
           }
           break;
       }
-
-      this.suggests.initialize(true);
-    }
+    };
   }
 
   initializeMovieAutoComplete() {
@@ -58,6 +60,7 @@ class Search extends React.Component {
     return (
       <div className="search-wrapper">
           <input
+            id="search-input"
             placeholder="Search..."
             className="search-input"
             type="text"

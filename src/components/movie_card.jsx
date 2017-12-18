@@ -6,7 +6,7 @@ let backdrop;
 
 
 
-class Card extends React.Component {
+class MovieCard extends React.Component {
 
   render() {
     if (this.props.movie) {
@@ -110,4 +110,4 @@ class Card extends React.Component {
 }
 
 
-export default Card;
+export default MovieCard;
