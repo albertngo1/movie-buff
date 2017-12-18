@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieCard from './movie_card';
+import ActorCard from './actor_card';
 import Search from './search';
 
 
@@ -16,6 +17,7 @@ class App extends React.Component {
 
     this.searchTypeSelect = this.searchTypeSelect.bind(this);
     this.fetchId = this.fetchId.bind(this);
+    this.renderCard = this.renderCard.bind(this);
   }
 
   searchTypeSelect(evt) {
@@ -78,17 +80,35 @@ class App extends React.Component {
   }
 
   renderCard() {
+    switch (this.state.searchType) {
+      case "movie":
+        return(
+          <MovieCard movie={this.state.movie} />
+        )
+        break;
+      case "person":
+        return(
+          <ActorCard actor={this.state.person} />
+        )
+    }
+  }
 
+  componentWillUpdate(nextProps, nextState) {
+    if (this.state.movie && nextState.searchType === 'movie') {
+      document.body.style.backgroundImage = 'url(http://image.tmdb.org/t/p/original'
+      + nextState.movie.backdrop + ')';
+    } else {
+      document.body.style.backgroundImage = null;
+    }
   }
 
   render() {
-    console.log(this.state)
     return(
       <div className="main-wrapper">
         <Search searchTypeSelect={this.searchTypeSelect}
           searchType={this.state.searchType}
           fetchId={(id) => this.fetchId(id)}/>
-        <MovieCard movie={this.state.movie} />
+        {this.renderCard()}
       </div>
     )
   }
