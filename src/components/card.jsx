@@ -18,7 +18,7 @@ class Card extends React.Component {
           status, tagline, title, boxOffice } = movie;
 
       poster = 'https://image.tmdb.org/t/p/w300' + poster;
-      
+
       title = title.toUpperCase();
 
       if (budget === undefined || budget === 0) {
@@ -32,13 +32,19 @@ class Card extends React.Component {
         boxOffice = numeral(boxOffice).format('$0,0[.]00');
       }
 
-      releaseDate = dateHelper(releaseDate);
+      if (releaseDate === undefined || releaseDate === "") {
+        releaseDate = noData
+      } else {
+        releaseDate = dateHelper(releaseDate);
+      }
 
       genres = genres.map((genre, idx) => {
         return (
           <span key={`genre-${idx}`} className="genre">{genre}</span>
         )
       });
+
+      rating = rating === 0 ? noData : `${rating} / 10`
 
       return(
         <div className="card-main">
@@ -57,7 +63,7 @@ class Card extends React.Component {
                 </div>
                 <div className="card-property-wrapper">
                   <span className="property-label">Rating:</span>
-                  <span className="property">{rating} / 10</span>
+                  <span className="property">{rating}</span>
                 </div>
               </div>
               <div className="card-col">

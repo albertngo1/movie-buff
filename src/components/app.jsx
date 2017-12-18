@@ -80,7 +80,6 @@ class App extends React.Component {
 
 
     $('.search-input').typeahead({
-        hint: true,
         highlight: true,
         minLength: 2,
       },
@@ -96,7 +95,7 @@ class App extends React.Component {
 
   render() {
     return(
-      <div>
+      <div class="main-wrapper">
         <Search searchType={this.searchType} queryChange={this.queryChange}/>
         <Card movie={this.state.movie} />
       </div>

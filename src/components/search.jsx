@@ -18,9 +18,11 @@ class Search extends React.Component {
             className="search-input"
             type="text"
             ></input>
-        <select onChange={(e) => this.props.searchType(e)}>
-          <option value="movie">Movie</option>
-          <option value="person">Actor</option>
+        <select
+          className='search-select'
+          onChange={(e) => this.props.searchType(e)}>
+          <option className="search-select-option" value="movie">Movie</option>
+          <option className="search-select-option" value="person">Actor</option>
         </select>
       </div>
     )

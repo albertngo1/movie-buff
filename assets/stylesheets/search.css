@@ -6,5 +6,24 @@
 }
 
 .search-input::placeholder {
+  font-family: 'Roboto';
   color: rgba(255, 255, 255, .7);
+  font-size: 15px;
+}
+.search-input {
+  font-family: 'Roboto';
+}
+
+.search-select {
+  border-radius: 0;
+  user-select: none;
+  outline: none;
+  width: 60px;
+  height: 20px;
+  vertical-align: middle;
+  text-indent: 2px;
+  margin-left: 30px;
+  border: 1px solid rgb(71, 255, 79);
+  background-color: black;
+  color: rgb(71, 255, 79);
 }

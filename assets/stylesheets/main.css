@@ -4,6 +4,9 @@
     margin:0;
     height: 100%
 }
+.main-wrapper {
+  padding-top: 2em;
+}
 
 .card-main {
   display: flex;
@@ -38,18 +41,21 @@
 }
 
 .card-title {
+  font-family: 'Bungee', cursive;
   font-size: 2.5vw;
   text-shadow: 1px rgb(246, 246, 246);
 }
 
 .card-tagline {
-  font-size: 20px;
+  font-family: 'Lora';
+  font-size: 18px;
   color: rgb(71, 255, 79);
   margin-bottom: 5px;
   font-style: italic;
 }
 
 .card-overview {
+  font-family: 'Roboto';
   font-size: 13px;
 }
 
@@ -61,6 +67,7 @@
 }
 
 .property-label {
+  font-family: 'Lora';
   text-shadow: 1px white;
 
 }
@@ -81,17 +88,20 @@
 }
 
 .genre {
+  font-family: 'Roboto';
   color: rgb(71, 255, 79);
   font-size: 13px;
   background-color: rgba(255, 255, 255, 0.3);
   border: 1px rgba(255, 255, 255, 0.3) solid;
   padding-left: 2px;
   padding-right: 2px;
+  margin-right: 8px;
 }
 
 .genre-wrap {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   align-items: space-between;
   width: auto;
 }

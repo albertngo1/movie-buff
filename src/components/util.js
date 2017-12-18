@@ -5,18 +5,18 @@ export const dateHelper = (date) => {
   const day = date[2];
 
   let numberToMonth = {
-    1: "January",
-    2: "February",
-    3: "March",
-    4: "April",
+    1: "Jan",
+    2: "Feb",
+    3: "Mar",
+    4: "Apr",
     5: "May",
     6: "June",
     7: "July",
-    8: "August",
-    9: "September",
-    10: "October",
-    11: "November",
-    12: "December"
+    8: "Aug",
+    9: "Sept",
+    10: "Oct",
+    11: "Nov",
+    12: "Dec"
   };
 
   return `${day} ${numberToMonth[parseInt(date[1])]} ${year}`;
