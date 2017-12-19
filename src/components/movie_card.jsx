@@ -96,10 +96,6 @@ class MovieCard extends React.Component {
     } else {
       return (<div></div>)
     }
-
-
-
-
   }
 
   componentDidUpdate() {

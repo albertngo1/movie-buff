@@ -79,6 +79,16 @@ class App extends React.Component {
     this.fetchAPI(url);
   }
 
+
+  componentWillUpdate(nextProps, nextState) {
+    if (this.state.movie && nextState.searchType === 'movie') {
+      document.body.style.backgroundImage = 'url(http://image.tmdb.org/t/p/original'
+      + nextState.movie.backdrop + ')';
+    } else {
+      document.body.style.backgroundImage = null;
+    }
+  }
+
   renderCard() {
     switch (this.state.searchType) {
       case "movie":
@@ -88,17 +98,9 @@ class App extends React.Component {
         break;
       case "person":
         return(
-          <ActorCard actor={this.state.person} />
+          <ActorCard person={this.state.person} />
         )
-    }
-  }
-
-  componentWillUpdate(nextProps, nextState) {
-    if (this.state.movie && nextState.searchType === 'movie') {
-      document.body.style.backgroundImage = 'url(http://image.tmdb.org/t/p/original'
-      + nextState.movie.backdrop + ')';
-    } else {
-      document.body.style.backgroundImage = null;
+        break;
     }
   }
 

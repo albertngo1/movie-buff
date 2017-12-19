@@ -27,3 +27,7 @@
   background-color: black;
   color: rgb(71, 255, 79);
 }
+
+.search-select:hover {
+  cursor: pointer;
+}
