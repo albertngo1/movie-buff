@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieCard from './movie_card';
-import ActorCard from './actor_card';
+import ActorCard from './actor/actor_card';
 import Search from './search';
 import _ from 'lodash';
 
@@ -14,12 +14,17 @@ class App extends React.Component {
 
     this.state = {
       searchType: "movie",
+      history: [],
     }
 
     this.searchTypeSelect = this.searchTypeSelect.bind(this);
     this.fetchId = this.fetchId.bind(this);
     this.renderCard = this.renderCard.bind(this);
     this.actorKnownFor = this.actorKnownFor.bind(this);
+  }
+
+  manageHistory() {
+
   }
 
   searchTypeSelect(evt) {

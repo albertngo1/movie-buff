@@ -136,3 +136,30 @@
   height: 120px;
   overflow-y: scroll;
 }
+.actor-movie-poster-pic {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 3px;
+}
+.actor-related-movies-wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.actor-related-movies-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.actor-movie-poster-title {
+  font-size: 1em;
+  color: rgb(71, 255, 79);
+}
+.actor-related-movies-label {
+  padding-bottom: 5px;
+}
+.known-for-main-wrap {
+  display: flex;
+  flex-direction: column;
+}
