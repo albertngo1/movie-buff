@@ -2,6 +2,7 @@ import React from 'react';
 import MovieCard from './movie_card';
 import ActorCard from './actor_card';
 import Search from './search';
+import _ from 'lodash';
 
 
 
@@ -18,6 +19,7 @@ class App extends React.Component {
     this.searchTypeSelect = this.searchTypeSelect.bind(this);
     this.fetchId = this.fetchId.bind(this);
     this.renderCard = this.renderCard.bind(this);
+    this.actorKnownFor = this.actorKnownFor.bind(this);
   }
 
   searchTypeSelect(evt) {
@@ -79,6 +81,12 @@ class App extends React.Component {
     this.fetchAPI(url);
   }
 
+  actorKnownFor(movies) {
+    const nextState = _.merge({}, this.state);
+    nextState.knownFor = movies;
+    this.setState(nextState);
+  }
+
 
   componentWillUpdate(nextProps, nextState) {
     if (this.state.movie && nextState.searchType === 'movie') {
@@ -98,7 +106,8 @@ class App extends React.Component {
         break;
       case "person":
         return(
-          <ActorCard person={this.state.person} />
+          <ActorCard person={this.state.person}
+                     knownFor={this.state.knownFor}/>
         )
         break;
     }
@@ -109,7 +118,9 @@ class App extends React.Component {
       <div className="main-wrapper">
         <Search searchTypeSelect={this.searchTypeSelect}
           searchType={this.state.searchType}
-          fetchId={(id) => this.fetchId(id)}/>
+          fetchId={(id) => this.fetchId(id)}
+          actorKnownFor={this.actorKnownFor}
+          />
         {this.renderCard()}
       </div>
     )

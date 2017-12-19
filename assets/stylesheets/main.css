@@ -37,7 +37,7 @@
 }
 
 .card-header {
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 }
 
 .card-title {
@@ -62,7 +62,7 @@
 .card-property-wrapper {
   display: flex;
   flex-direction: column;
-  width: 100px;
+  width: auto;
   padding-bottom: 30px;
 }
 
@@ -105,4 +105,34 @@
   flex-wrap: wrap;
   align-items: space-between;
   width: auto;
+}
+.actor-col {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+.actor-bio-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+.biography-label {
+  color: rgb(71, 255, 79);
+  font-family: 'Lora';
+  text-shadow: 1px white;
+  font-size: 1.2vw;
+  font-weight: bolder;
+}
+.actor-property-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: auto;
+  padding-bottom: 10px;
+}
+.actor-bio {
+  margin-top: 5px;
+  padding: 5px;
+  width: inherit;
+  height: 120px;
+  overflow-y: scroll;
 }

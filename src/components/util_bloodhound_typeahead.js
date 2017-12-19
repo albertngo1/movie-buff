@@ -2,7 +2,7 @@ import Bloodhound from 'bloodhound-js';
 import typeahead from 'typeahead.js'
 import $ from 'jquery';
 
-export const movieAutoComplete = (searchType, fetchMovieId, search) => {
+export const movieAutoComplete = (searchType, fetchMovieId, search, actorKnownFor) => {
   search.suggests = new Bloodhound({
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     datumTokenizer: Bloodhound.tokenizers.whitespace,
@@ -32,6 +32,7 @@ export const movieAutoComplete = (searchType, fetchMovieId, search) => {
       source: search.suggests.ttAdapter()
     }
   ).bind('typeahead:select', (e, suggest) => {
-    fetchMovieId(suggest.id);
+    fetchMovieId(suggest.id)
+    actorKnownFor(suggest.knownFor)
   });
 }
