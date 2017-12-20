@@ -1,11 +1,10 @@
 import React from 'react';
 import MovieCard from './movie_card';
 import ActorCard from './actor/actor_card';
+import TVCard from './tv_card';
 import Search from './search';
+import { fetchAPI } from './utils/util_api';
 import _ from 'lodash';
-
-
-
 
 class App extends React.Component {
 
@@ -23,73 +22,21 @@ class App extends React.Component {
     this.actorKnownFor = this.actorKnownFor.bind(this);
   }
 
-  manageHistory() {
-
-  }
-
   searchTypeSelect(evt) {
     this.setState({searchType: evt.currentTarget.value});
   }
 
-  fetchAPI(url) {
-    switch (this.state.searchType) {
-      case "movie":
-        fetch(url)
-          .then((res) => {
-            return res.json();
-          })
-          .then(data => {
-            this.setState({
-              movie: {
-                id: data.id,
-                title: data.title,
-                genres: data.genres.map(genre => genre.name),
-                overview: data.overview,
-                runtime: data.runtime,
-                tagline: data.tagline,
-                rating: data.vote_average,
-                releaseDate: data.release_date,
-                poster: data.poster_path,
-                backdrop: data.backdrop_path,
-                budget: data.budget,
-                boxOffice: data.revenue,
-                status: data.status,
-              }
-              })
-          })
-          break;
-      case "person":
-        fetch(url)
-          .then((res) => {
-            return res.json();
-          })
-          .then(data => {
-            this.setState({
-              person: {
-                id: data.id,
-                biography: data.biography,
-                birthday: data.birthday,
-                deathday: data.deathday,
-                birthLocation: data.place_of_birth,
-                name: data.name,
-                picture: data.profile_path,
-              }
-            })
-          })
-        break;
-
-    }
-  }
-
   fetchId(id) {
     const url = `https://api.themoviedb.org/3/${this.state.searchType}/${id}?api_key=37f9aa8b184d38890b9d79b807b3c2a0`;
-    this.fetchAPI(url);
+    fetchAPI(url, this);
   }
 
   actorKnownFor(movies) {
-    const nextState = _.merge({}, this.state);
-    nextState.knownFor = movies;
-    this.setState(nextState);
+    if (this.state.searchType === 'person') {
+      const nextState = _.merge({}, this.state);
+      nextState.knownFor = movies;
+      this.setState(nextState);
+    }
   }
 
 
@@ -97,6 +44,9 @@ class App extends React.Component {
     if (this.state.movie && nextState.searchType === 'movie') {
       document.body.style.backgroundImage = 'url(http://image.tmdb.org/t/p/original'
       + nextState.movie.backdrop + ')';
+    } else if (this.state.tv && nextState.searchType === 'tv') {
+        document.body.style.backgroundImage = 'url(http://image.tmdb.org/t/p/original'
+        + nextState.tv.backdrop + ')';
     } else {
       document.body.style.backgroundImage = null;
     }
@@ -115,10 +65,15 @@ class App extends React.Component {
                      knownFor={this.state.knownFor}/>
         )
         break;
+      case "tv":
+        return(
+          <TVCard tv={this.state.tv} />
+        )
     }
   }
 
   render() {
+    console.log(this.state)
     return(
       <div className="main-wrapper">
         <Search searchTypeSelect={this.searchTypeSelect}

@@ -7,12 +7,12 @@ import KnownFor from './known_for';
 class ActorCard extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
 
   render() {
     if (this.props.person) {
+      let noData = '-'
       const { person } = this.props;
       const { birthday, deathday, birthLocation,
         biography, name} = person;

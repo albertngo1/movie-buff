@@ -5,13 +5,17 @@ const KnownFor = (props) => {
   const knownFor = props.knownFor.map(el => {
     if (el.media_type === 'movie') {
       return {
+        id: el.id,
         value: el.title,
         poster: 'https://image.tmdb.org/t/p/w300' + el.poster_path,
+        type: 'movie'
       }
     } else if (el.media_type === 'tv'){
       return {
+        id: el.id,
         value: el.name,
         poster: 'https://image.tmdb.org/t/p/w300' + el.poster_path,
+        type: 'tv',
       }
     }
   }).map((el2, idx) => {

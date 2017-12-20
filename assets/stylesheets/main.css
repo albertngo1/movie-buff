@@ -133,7 +133,7 @@
   margin-top: 5px;
   padding: 5px;
   width: inherit;
-  height: 120px;
+  max-height: 120px;
   overflow-y: scroll;
 }
 .actor-movie-poster-pic {

@@ -1,7 +1,6 @@
 import React from 'react';
 import numeral from 'numeral'
-import { dateHelper } from './util';
-let backdrop;
+import { dateHelper } from './utils/util';
 
 
 

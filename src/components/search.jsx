@@ -1,5 +1,5 @@
 import React from 'react';
-import { movieAutoComplete } from './util_bloodhound_typeahead';
+import { movieAutoComplete } from './utils/util_bloodhound_typeahead';
 import typeahead from 'typeahead.js'
 import $ from 'jquery';
 
@@ -47,6 +47,17 @@ class Search extends React.Component {
             })
           }
           break;
+        case "tv":
+          this.suggests.remote.url = `https://api.themoviedb.org/3/search/tv?query=%QUERY&api_key=37f9aa8b184d38890b9d79b807b3c2a0`;
+          this.suggests.remote.transform = (tvs) => {
+            return tvs.results.map(tv => {
+              return {
+                id: tv.id,
+                value: tv.name,
+              }
+            })
+          }
+          break;
       }
     };
   }
@@ -70,6 +81,7 @@ class Search extends React.Component {
           onChange={(e) => this.props.searchTypeSelect(e)}>
           <option className="search-select-option" value="movie">Movie</option>
           <option className="search-select-option" value="person">Actor</option>
+          <option className="search-select-option" value="tv">TV</option>
         </select>
       </div>
     )

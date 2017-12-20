@@ -1,5 +1,5 @@
 import React from 'react';
-import { dateHelper } from '../util';
+import { dateHelper } from '../utils/util';
 import moment from 'moment';
 
 const Age = (props) => {
