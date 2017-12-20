@@ -12,10 +12,6 @@ module.exports = {
     extensions: ["*", ".js", ".jsx"]
   },
   devtool: 'source-map',
-  plugins: [
-      new webpack.optimize.UglifyJsPlugin(),
-      new webpack.optimize.AggressiveMergingPlugin(),
-  ],
   module: {
     loaders: [
     {
@@ -33,3 +29,8 @@ module.exports = {
     ]
   }
 };
+
+// plugins: [
+//     new webpack.optimize.UglifyJsPlugin(),
+//     new webpack.optimize.AggressiveMergingPlugin(),
+// ],

@@ -1,0 +1,17 @@
+.tv-header-details {
+  font-family: 'Lora';
+  font-size: 1.1vw;
+  color: white;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+.tv-header-details span {
+  margin-right: 8px;
+}
+
+.tv-header-details span p {
+  display: inline;
+  color:  rgb(71, 255, 79);
+  font-weight: bolder;
+}

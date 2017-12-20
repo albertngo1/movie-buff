@@ -73,7 +73,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return(
       <div className="main-wrapper">
         <Search searchTypeSelect={this.searchTypeSelect}

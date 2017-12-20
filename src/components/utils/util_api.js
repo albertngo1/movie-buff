@@ -55,7 +55,7 @@ export const fetchAPI = (url, app) => {
               id: data.id,
               backdrop: data.backdrop_path,
               createdBy: data.created_by,
-              geners: data.genres.map(genre => genre.name),
+              genres: data.genres.map(genre => genre.name),
               firstAired: data.first_air_date,
               lastAired: data.last_air_date,
               runTime: data.episode_run_time,
