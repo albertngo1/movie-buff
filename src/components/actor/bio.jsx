@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Bio = (props) => {
-  const {biography} = props;
+  let {biography} = props;
+  biography = biography.split('\n').map((el, idx) => <div key={`par-${idx}`}>{el}<br/></div>)
+  
   return(
     <div className="actor-bio-wrapper">
       <span className="biography-label">Biography:</span>

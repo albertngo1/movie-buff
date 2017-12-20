@@ -1,6 +1,7 @@
 import React from 'react';
 import numeral from 'numeral';
-import { dateHelper } from './utils/util';
+import { dateHelper } from '../utils/util';
+import CreatedBy from './created_by';
 
 class TVCard extends React.Component {
 
@@ -16,7 +17,6 @@ class TVCard extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     if (this.props.tv) {
       let noData = "N/A";
       const { tv } = this.props;
@@ -52,6 +52,10 @@ class TVCard extends React.Component {
         rating = noData;
       }
 
+      if (seasons.length === 0) {
+        seasons = noData;
+      }
+
       genres = genres.map((genre, idx) => {
         return (
           <span key={`genre-${idx}`} className="genre">{genre}</span>
@@ -80,14 +84,27 @@ class TVCard extends React.Component {
                 </div>
               <div className="card-overview">{overview}</div>
             </div>
-            <div>
-              <span className="property-label">Networks:</span>
-              <div className="genre-wrap">{networks}</div>
+            <div className="card-col-container">
+              <div className="card-col">
+                <div className="card-property-wrapper">
+                  <span className="property-label">Networks:</span>
+                  <div className="property">{networks}</div>
+                </div>
+              </div>
+              <div className="card-col">
+                <div className="card-property-wrapper">
+                  <span className="property-label">Seasons:</span>
+                  <div className="property">{seasons.length}</div>
+                </div>
+              </div>
+              <div className="card-col">
+                <div className="card-property-wrapper">
+                  <span className="property-label">Genres:</span>
+                  <div className="genre-wrap">{genres}</div>
+                </div>
+              </div>
             </div>
-            <div>
-              <span className="property-label">Genres:</span>
-              <div className="genre-wrap">{genres}</div>
-            </div>
+            <CreatedBy createdBy={createdBy}/>
           </div>
         </div>
       )

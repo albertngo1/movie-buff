@@ -49834,7 +49834,7 @@ var _actor_card = __webpack_require__(159);
 
 var _actor_card2 = _interopRequireDefault(_actor_card);
 
-var _tv_card = __webpack_require__(164);
+var _tv_card = __webpack_require__(196);
 
 var _tv_card2 = _interopRequireDefault(_tv_card);
 
@@ -50309,17 +50309,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Bio = function Bio(props) {
   var biography = props.biography;
 
+  biography = biography.split('\n').map(function (el, idx) {
+    return _react2.default.createElement(
+      'div',
+      { key: 'par-' + idx },
+      el,
+      _react2.default.createElement('br', null)
+    );
+  });
+
   return _react2.default.createElement(
-    "div",
-    { className: "actor-bio-wrapper" },
+    'div',
+    { className: 'actor-bio-wrapper' },
     _react2.default.createElement(
-      "span",
-      { className: "biography-label" },
-      "Biography:"
+      'span',
+      { className: 'biography-label' },
+      'Biography:'
     ),
     _react2.default.createElement(
-      "div",
-      { className: "card-overview actor-bio" },
+      'div',
+      { className: 'card-overview actor-bio' },
       biography
     )
   );
@@ -50748,222 +50757,7 @@ var KnownFor = function KnownFor(props) {
 exports.default = KnownFor;
 
 /***/ }),
-/* 164 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _numeral = __webpack_require__(19);
-
-var _numeral2 = _interopRequireDefault(_numeral);
-
-var _util = __webpack_require__(11);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var TVCard = function (_React$Component) {
-  _inherits(TVCard, _React$Component);
-
-  function TVCard(props) {
-    _classCallCheck(this, TVCard);
-
-    return _possibleConstructorReturn(this, (TVCard.__proto__ || Object.getPrototypeOf(TVCard)).call(this, props));
-  }
-
-  _createClass(TVCard, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.tv.backdrop) {
-        document.body.style.backgroundImage = 'url(http://image.tmdb.org/t/p/original' + nextProps.tv.backdrop + ')';
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      console.log(this.props);
-      if (this.props.tv) {
-        var noData = "N/A";
-        var tv = this.props.tv;
-        var name = tv.name,
-            poster = tv.poster,
-            overview = tv.overview,
-            createdBy = tv.createdBy,
-            genres = tv.genres,
-            firstAired = tv.firstAired,
-            lastAired = tv.lastAired,
-            runTime = tv.runTime,
-            networks = tv.networks,
-            productionCompanies = tv.productionCompanies,
-            seasons = tv.seasons,
-            rating = tv.rating;
-
-
-        poster = 'https://image.tmdb.org/t/p/w300' + poster;
-
-        if (firstAired) {
-          firstAired = (0, _util.dateHelper)(firstAired);
-        } else {
-          firstAired = noData;
-        }
-
-        if (lastAired) {
-          lastAired = (0, _util.dateHelper)(lastAired);
-        } else {
-          lastAired = noData;
-        }
-
-        if (runTime) {
-          runTime = runTime[0] + " minutes";
-        } else {
-          runTime = noData;
-        }
-
-        if (rating) {
-          rating += " / 10";
-        } else {
-          rating = noData;
-        }
-
-        genres = genres.map(function (genre, idx) {
-          return _react2.default.createElement(
-            'span',
-            { key: 'genre-' + idx, className: 'genre' },
-            genre
-          );
-        });
-
-        networks = networks.map(function (network, idx) {
-          return _react2.default.createElement(
-            'span',
-            { key: 'network-' + idx, className: 'genre' },
-            network
-          );
-        });
-
-        return _react2.default.createElement(
-          'div',
-          { className: 'card-main' },
-          _react2.default.createElement('img', { className: 'card-poster', src: '' + poster }),
-          _react2.default.createElement(
-            'div',
-            { className: 'card-details' },
-            _react2.default.createElement(
-              'div',
-              { className: 'card-header' },
-              _react2.default.createElement(
-                'div',
-                { className: 'card-title' },
-                name
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'tv-header-details' },
-                _react2.default.createElement(
-                  'span',
-                  null,
-                  'First Aired: ',
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    firstAired
-                  )
-                ),
-                _react2.default.createElement(
-                  'span',
-                  null,
-                  'Last Aired: ',
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    lastAired
-                  )
-                ),
-                _react2.default.createElement(
-                  'span',
-                  null,
-                  'Runtime: ',
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    runTime
-                  )
-                ),
-                _react2.default.createElement(
-                  'span',
-                  null,
-                  'Rating: ',
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    rating
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'card-overview' },
-                overview
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              null,
-              _react2.default.createElement(
-                'span',
-                { className: 'property-label' },
-                'Networks:'
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'genre-wrap' },
-                networks
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              null,
-              _react2.default.createElement(
-                'span',
-                { className: 'property-label' },
-                'Genres:'
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'genre-wrap' },
-                genres
-              )
-            )
-          )
-        );
-      } else {
-        return _react2.default.createElement('div', null);
-      }
-    }
-  }]);
-
-  return TVCard;
-}(_react2.default.Component);
-
-exports.default = TVCard;
-
-/***/ }),
+/* 164 */,
 /* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -72951,6 +72745,316 @@ return Promise$2;
 /***/ (function(module, exports) {
 
 /* (ignored) */
+
+/***/ }),
+/* 195 */,
+/* 196 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _numeral = __webpack_require__(19);
+
+var _numeral2 = _interopRequireDefault(_numeral);
+
+var _util = __webpack_require__(11);
+
+var _created_by = __webpack_require__(197);
+
+var _created_by2 = _interopRequireDefault(_created_by);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var TVCard = function (_React$Component) {
+  _inherits(TVCard, _React$Component);
+
+  function TVCard(props) {
+    _classCallCheck(this, TVCard);
+
+    return _possibleConstructorReturn(this, (TVCard.__proto__ || Object.getPrototypeOf(TVCard)).call(this, props));
+  }
+
+  _createClass(TVCard, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.tv.backdrop) {
+        document.body.style.backgroundImage = 'url(http://image.tmdb.org/t/p/original' + nextProps.tv.backdrop + ')';
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      if (this.props.tv) {
+        var noData = "N/A";
+        var tv = this.props.tv;
+        var name = tv.name,
+            poster = tv.poster,
+            overview = tv.overview,
+            createdBy = tv.createdBy,
+            genres = tv.genres,
+            firstAired = tv.firstAired,
+            lastAired = tv.lastAired,
+            runTime = tv.runTime,
+            networks = tv.networks,
+            productionCompanies = tv.productionCompanies,
+            seasons = tv.seasons,
+            rating = tv.rating;
+
+
+        poster = 'https://image.tmdb.org/t/p/w300' + poster;
+
+        if (firstAired) {
+          firstAired = (0, _util.dateHelper)(firstAired);
+        } else {
+          firstAired = noData;
+        }
+
+        if (lastAired) {
+          lastAired = (0, _util.dateHelper)(lastAired);
+        } else {
+          lastAired = noData;
+        }
+
+        if (runTime) {
+          runTime = runTime[0] + " minutes";
+        } else {
+          runTime = noData;
+        }
+
+        if (rating) {
+          rating += " / 10";
+        } else {
+          rating = noData;
+        }
+
+        if (seasons.length === 0) {
+          seasons = noData;
+        }
+
+        genres = genres.map(function (genre, idx) {
+          return _react2.default.createElement(
+            'span',
+            { key: 'genre-' + idx, className: 'genre' },
+            genre
+          );
+        });
+
+        networks = networks.map(function (network, idx) {
+          return _react2.default.createElement(
+            'span',
+            { key: 'network-' + idx, className: 'genre' },
+            network
+          );
+        });
+
+        return _react2.default.createElement(
+          'div',
+          { className: 'card-main' },
+          _react2.default.createElement('img', { className: 'card-poster', src: '' + poster }),
+          _react2.default.createElement(
+            'div',
+            { className: 'card-details' },
+            _react2.default.createElement(
+              'div',
+              { className: 'card-header' },
+              _react2.default.createElement(
+                'div',
+                { className: 'card-title' },
+                name
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'tv-header-details' },
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  'First Aired: ',
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    firstAired
+                  )
+                ),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  'Last Aired: ',
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    lastAired
+                  )
+                ),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  'Runtime: ',
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    runTime
+                  )
+                ),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  'Rating: ',
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    rating
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'card-overview' },
+                overview
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'card-col-container' },
+              _react2.default.createElement(
+                'div',
+                { className: 'card-col' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'card-property-wrapper' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'property-label' },
+                    'Networks:'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'property' },
+                    networks
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'card-col' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'card-property-wrapper' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'property-label' },
+                    'Seasons:'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'property' },
+                    seasons.length
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'card-col' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'card-property-wrapper' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'property-label' },
+                    'Genres:'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'genre-wrap' },
+                    genres
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement(_created_by2.default, { createdBy: createdBy })
+          )
+        );
+      } else {
+        return _react2.default.createElement('div', null);
+      }
+    }
+  }]);
+
+  return TVCard;
+}(_react2.default.Component);
+
+exports.default = TVCard;
+
+/***/ }),
+/* 197 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CreatedBy = function CreatedBy(props) {
+  var knownFor = props.createdBy.map(function (el) {
+    return {
+      id: el.id,
+      value: el.name,
+      poster: 'https://image.tmdb.org/t/p/w300' + el.profile_path
+    };
+  }).map(function (el2, idx) {
+    return _react2.default.createElement(
+      'div',
+      { key: 'knownFor-' + idx, className: 'actor-related-movies-wrap' },
+      _react2.default.createElement('img', { className: 'actor-movie-poster-pic', src: '' + el2.poster }),
+      _react2.default.createElement(
+        'span',
+        { className: 'actor-movie-poster-title' },
+        el2.value
+      )
+    );
+  });
+
+  return _react2.default.createElement(
+    'div',
+    { className: 'known-for-main-wrap' },
+    _react2.default.createElement(
+      'div',
+      { className: 'property-label' },
+      'Created By:'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'actor-related-movies-container' },
+      knownFor
+    )
+  );
+};
+
+exports.default = CreatedBy;
 
 /***/ })
 /******/ ]);

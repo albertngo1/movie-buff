@@ -1,7 +1,7 @@
 import React from 'react';
 import MovieCard from './movie_card';
 import ActorCard from './actor/actor_card';
-import TVCard from './tv_card';
+import TVCard from './tv_show/tv_card';
 import Search from './search';
 import { fetchAPI } from './utils/util_api';
 import _ from 'lodash';
