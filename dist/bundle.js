@@ -4607,6 +4607,21 @@ return hooks;
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(145);
+} else {
+  module.exports = __webpack_require__(146);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -4794,21 +4809,6 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(145);
-} else {
-  module.exports = __webpack_require__(146);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 3 */
@@ -5170,7 +5170,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = emptyObject;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 7 */
@@ -15517,7 +15517,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 10 */
@@ -15586,7 +15586,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = warning;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 11 */
@@ -15687,7 +15687,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 
 module.exports = checkPropTypes;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 13 */
@@ -15807,7 +15807,7 @@ var EventListener = {
 };
 
 module.exports = EventListener;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 15 */
@@ -28843,7 +28843,7 @@ function flush() {
 function attemptVertx() {
   try {
     var r = require;
-    var vertx = __webpack_require__(169);
+    var vertx = __webpack_require__(170);
     vertxNext = vertx.runOnLoop || vertx.runOnContext;
     return useVertxTimer();
   } catch (e) {
@@ -29865,13 +29865,13 @@ return Promise;
 
 })));
 //# sourceMappingURL=es6-promise.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(7)))
 
 /***/ }),
 /* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var LruCache = __webpack_require__(171);
+var LruCache = __webpack_require__(172);
 var _ = __webpack_require__(3);
 
 var pendingRequestsCount = 0;
@@ -32467,7 +32467,7 @@ module.exports = isObject;
         }
     })();
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(188).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(189).setImmediate))
 
 /***/ }),
 /* 144 */
@@ -32476,7 +32476,7 @@ module.exports = isObject;
 "use strict";
 
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -32488,11 +32488,11 @@ var _app = __webpack_require__(157);
 
 var _app2 = _interopRequireDefault(_app);
 
-__webpack_require__(192);
+__webpack_require__(193);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-__webpack_require__(193).polyfill();
+__webpack_require__(194).polyfill();
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -33892,7 +33892,7 @@ module.exports = react;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 147 */
@@ -33957,7 +33957,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports = __webpack_require__(152);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 149 */
@@ -33976,7 +33976,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(2),l=__webpack_require__(13),B=__webpack_require__(4),C=__webpack_require__(5),ba=__webpack_require__(14),da=__webpack_require__(15),ea=__webpack_require__(16),fa=__webpack_require__(17),ia=__webpack_require__(18),D=__webpack_require__(6);
+var aa=__webpack_require__(1),l=__webpack_require__(13),B=__webpack_require__(4),C=__webpack_require__(5),ba=__webpack_require__(14),da=__webpack_require__(15),ea=__webpack_require__(16),fa=__webpack_require__(17),ia=__webpack_require__(18),D=__webpack_require__(6);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -34273,7 +34273,7 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var React = __webpack_require__(2);
+var React = __webpack_require__(1);
 var invariant = __webpack_require__(9);
 var warning = __webpack_require__(10);
 var ExecutionEnvironment = __webpack_require__(13);
@@ -49651,7 +49651,7 @@ module.exports = reactDom;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 153 */
@@ -49822,7 +49822,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -49834,17 +49834,17 @@ var _actor_card = __webpack_require__(159);
 
 var _actor_card2 = _interopRequireDefault(_actor_card);
 
-var _tv_card = __webpack_require__(196);
+var _tv_card = __webpack_require__(164);
 
 var _tv_card2 = _interopRequireDefault(_tv_card);
 
-var _search = __webpack_require__(165);
+var _search = __webpack_require__(166);
 
 var _search2 = _interopRequireDefault(_search);
 
-var _util_api = __webpack_require__(190);
+var _util_api = __webpack_require__(191);
 
-var _lodash = __webpack_require__(191);
+var _lodash = __webpack_require__(192);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -49929,7 +49929,7 @@ var App = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'main-wrapper' },
+        null,
         _react2.default.createElement(_search2.default, { searchTypeSelect: this.searchTypeSelect,
           searchType: this.state.searchType,
           fetchId: function fetchId(id) {
@@ -49960,7 +49960,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -50209,7 +50209,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -50300,7 +50300,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -50347,7 +50347,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -50701,7 +50701,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -50757,8 +50757,7 @@ var KnownFor = function KnownFor(props) {
 exports.default = KnownFor;
 
 /***/ }),
-/* 164 */,
-/* 165 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50770,11 +50769,323 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _util_bloodhound_typeahead = __webpack_require__(166);
+var _numeral = __webpack_require__(19);
+
+var _numeral2 = _interopRequireDefault(_numeral);
+
+var _util = __webpack_require__(11);
+
+var _created_by = __webpack_require__(165);
+
+var _created_by2 = _interopRequireDefault(_created_by);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var TVCard = function (_React$Component) {
+  _inherits(TVCard, _React$Component);
+
+  function TVCard(props) {
+    _classCallCheck(this, TVCard);
+
+    return _possibleConstructorReturn(this, (TVCard.__proto__ || Object.getPrototypeOf(TVCard)).call(this, props));
+  }
+
+  _createClass(TVCard, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.tv.backdrop) {
+        document.body.style.backgroundImage = 'url(http://image.tmdb.org/t/p/original' + nextProps.tv.backdrop + ')';
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      if (this.props.tv) {
+        var noData = "N/A";
+        var tv = this.props.tv;
+        var name = tv.name,
+            poster = tv.poster,
+            overview = tv.overview,
+            createdBy = tv.createdBy,
+            genres = tv.genres,
+            firstAired = tv.firstAired,
+            lastAired = tv.lastAired,
+            runTime = tv.runTime,
+            networks = tv.networks,
+            productionCompanies = tv.productionCompanies,
+            seasons = tv.seasons,
+            rating = tv.rating;
+
+
+        poster = 'https://image.tmdb.org/t/p/w300' + poster;
+
+        if (firstAired) {
+          firstAired = (0, _util.dateHelper)(firstAired);
+        } else {
+          firstAired = noData;
+        }
+
+        if (lastAired) {
+          lastAired = (0, _util.dateHelper)(lastAired);
+        } else {
+          lastAired = noData;
+        }
+
+        if (runTime) {
+          runTime = runTime[0] + " minutes";
+        } else {
+          runTime = noData;
+        }
+
+        if (rating) {
+          rating += " / 10";
+        } else {
+          rating = noData;
+        }
+
+        if (seasons.length === 0) {
+          seasons = noData;
+        }
+
+        genres = genres.map(function (genre, idx) {
+          return _react2.default.createElement(
+            'span',
+            { key: 'genre-' + idx, className: 'genre' },
+            genre
+          );
+        });
+
+        networks = networks.map(function (network, idx) {
+          return _react2.default.createElement(
+            'span',
+            { key: 'network-' + idx, className: 'genre' },
+            network
+          );
+        });
+
+        return _react2.default.createElement(
+          'div',
+          { className: 'card-main' },
+          _react2.default.createElement('img', { className: 'card-poster', src: '' + poster }),
+          _react2.default.createElement(
+            'div',
+            { className: 'card-details' },
+            _react2.default.createElement(
+              'div',
+              { className: 'card-header' },
+              _react2.default.createElement(
+                'div',
+                { className: 'card-title' },
+                name
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'tv-header-details' },
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  'First Aired: ',
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    firstAired
+                  )
+                ),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  'Last Aired: ',
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    lastAired
+                  )
+                ),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  'Runtime: ',
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    runTime
+                  )
+                ),
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  'Rating: ',
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    rating
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'card-overview' },
+                overview
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'card-col-container' },
+              _react2.default.createElement(
+                'div',
+                { className: 'card-col' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'card-property-wrapper' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'property-label' },
+                    'Networks:'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'property' },
+                    networks
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'card-col' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'card-property-wrapper' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'property-label' },
+                    'Seasons:'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'property' },
+                    seasons.length
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'card-col' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'card-property-wrapper' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'property-label' },
+                    'Genres:'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'genre-wrap' },
+                    genres
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement(_created_by2.default, { createdBy: createdBy })
+          )
+        );
+      } else {
+        return _react2.default.createElement('div', null);
+      }
+    }
+  }]);
+
+  return TVCard;
+}(_react2.default.Component);
+
+exports.default = TVCard;
+
+/***/ }),
+/* 165 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CreatedBy = function CreatedBy(props) {
+  if (props.createdBy.length > 0) {
+    var createdBy = props.createdBy.map(function (el) {
+      return {
+        id: el.id,
+        value: el.name,
+        poster: 'https://image.tmdb.org/t/p/w300' + el.profile_path
+      };
+    }).map(function (el2, idx) {
+      return _react2.default.createElement(
+        'div',
+        { key: 'createdBy-' + idx, className: 'actor-related-movies-wrap' },
+        _react2.default.createElement('img', { className: 'actor-movie-poster-pic', src: '' + el2.poster }),
+        _react2.default.createElement(
+          'span',
+          { className: 'actor-movie-poster-title' },
+          el2.value
+        )
+      );
+    });
+    return _react2.default.createElement(
+      'div',
+      { className: 'known-for-main-wrap' },
+      _react2.default.createElement(
+        'div',
+        { className: 'property-label' },
+        'Created By:'
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'actor-related-movies-container' },
+        createdBy
+      )
+    );
+  } else {
+    return _react2.default.createElement('div', null);
+  }
+};
+
+exports.default = CreatedBy;
+
+/***/ }),
+/* 166 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _util_bloodhound_typeahead = __webpack_require__(167);
 
 var _typeahead = __webpack_require__(143);
 
@@ -50909,7 +51220,7 @@ var Search = function (_React$Component) {
 exports.default = Search;
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50920,7 +51231,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.movieAutoComplete = undefined;
 
-var _bloodhoundJs = __webpack_require__(167);
+var _bloodhoundJs = __webpack_require__(168);
 
 var _bloodhoundJs2 = _interopRequireDefault(_bloodhoundJs);
 
@@ -50967,23 +51278,23 @@ var movieAutoComplete = exports.movieAutoComplete = function movieAutoComplete(s
 };
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(168);
+module.exports = __webpack_require__(169);
 
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _ = __webpack_require__(3);
 var Promise = __webpack_require__(140).Promise;
-var Remote = __webpack_require__(170);
-var Prefetch = __webpack_require__(172);
-var tokenizers = __webpack_require__(178);
-var oParser = __webpack_require__(179);
-var SearchIndex = __webpack_require__(187);
+var Remote = __webpack_require__(171);
+var Prefetch = __webpack_require__(173);
+var tokenizers = __webpack_require__(179);
+var oParser = __webpack_require__(180);
+var SearchIndex = __webpack_require__(188);
 var Transport = __webpack_require__(141);
 
 function Bloodhound(o) {
@@ -51158,13 +51469,13 @@ module.exports = Bloodhound;
 
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -51222,7 +51533,7 @@ _.mixin(Remote.prototype, {
 module.exports = Remote;
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -51326,10 +51637,10 @@ module.exports = LruCache;
 
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var PersistentStorage = __webpack_require__(173);
+var PersistentStorage = __webpack_require__(174);
 var _ = __webpack_require__(3);
 
 var keys = { data: 'data', protocol: 'protocol', thumbprint: 'thumbprint' };
@@ -51420,10 +51731,10 @@ module.exports = Prefetch;
 
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var storage2 = __webpack_require__(174);
+var storage2 = __webpack_require__(175);
 var _ = __webpack_require__(3);
 
 var LOCAL_STORAGE;
@@ -51568,11 +51879,11 @@ module.exports = PersistentStorage;
 
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Storage = __webpack_require__(175);
-var cookie = __webpack_require__(177);
+var Storage = __webpack_require__(176);
+var cookie = __webpack_require__(178);
 
 var _storage_support = true;
 
@@ -51613,10 +51924,10 @@ if (_storage_support) {
 
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var numKeys = __webpack_require__(176);
+var numKeys = __webpack_require__(177);
 
 function Storage(obj, set, clear) {
   this._obj = obj || {};
@@ -51676,7 +51987,7 @@ module.exports = Storage;
 
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports) {
 
 module.exports = function(obj) {
@@ -51692,7 +52003,7 @@ module.exports = function(obj) {
 
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports) {
 
 function createCookie(name, value, days) {
@@ -51734,7 +52045,7 @@ module.exports = {
 
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -51782,12 +52093,12 @@ module.exports = {
 
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _ = __webpack_require__(3);
-var ajax = __webpack_require__(180);
-var VERSION = __webpack_require__(186);
+var ajax = __webpack_require__(181);
+var VERSION = __webpack_require__(187);
 
 module.exports = function(o) {
   var defaults, sorter;
@@ -51981,11 +52292,11 @@ function callbackToDeferred(fn) {
 
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Promise = __webpack_require__(140).Promise;
-var request = __webpack_require__(181);
+var request = __webpack_require__(182);
 
 module.exports = function(o) {
   return new Promise(function(resolve, reject) {
@@ -51998,16 +52309,16 @@ module.exports = function(o) {
 
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
  * Module dependencies.
  */
 
-var Emitter = __webpack_require__(182);
-var reduce = __webpack_require__(183);
-var requestBase = __webpack_require__(184);
+var Emitter = __webpack_require__(183);
+var reduce = __webpack_require__(184);
+var requestBase = __webpack_require__(185);
 var isObject = __webpack_require__(142);
 
 /**
@@ -52057,7 +52368,7 @@ function isHost(obj) {
  * Expose `request`.
  */
 
-var request = module.exports = __webpack_require__(185).bind(null, Request);
+var request = module.exports = __webpack_require__(186).bind(null, Request);
 
 /**
  * Determine XHR.
@@ -53081,7 +53392,7 @@ request.put = function(url, data, fn){
 
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -53250,7 +53561,7 @@ Emitter.prototype.hasListeners = function(event){
 
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports) {
 
 
@@ -53279,7 +53590,7 @@ module.exports = function(arr, fn, initial){
 };
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -53451,7 +53762,7 @@ exports.field = function(name, val) {
 
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports) {
 
 // The node and browser modules expose versions of this with the
@@ -53489,7 +53800,7 @@ module.exports = request;
 
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports) {
 
 /*
@@ -53502,7 +53813,7 @@ module.exports = '1.0.0';
 
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _ = __webpack_require__(3);
@@ -53682,7 +53993,7 @@ module.exports = SearchIndex;
 
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var apply = Function.prototype.apply;
@@ -53735,13 +54046,13 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(189);
+__webpack_require__(190);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -53931,10 +54242,10 @@ exports.clearImmediate = clearImmediate;
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(2)))
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54018,7 +54329,7 @@ var fetchAPI = exports.fetchAPI = function fetchAPI(url, app) {
 };
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -71110,7 +71421,7 @@ var fetchAPI = exports.fetchAPI = function fetchAPI(url, app) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(20)(module)))
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports) {
 
 (function(self) {
@@ -71577,7 +71888,7 @@ var fetchAPI = exports.fetchAPI = function fetchAPI(url, app) {
 
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, global) {var require;/*!
@@ -71717,7 +72028,7 @@ function flush() {
 function attemptVertx() {
   try {
     var r = require;
-    var vertx = __webpack_require__(194);
+    var vertx = __webpack_require__(195);
     vertxNext = vertx.runOnLoop || vertx.runOnContext;
     return useVertxTimer();
   } catch (e) {
@@ -72738,323 +73049,13 @@ return Promise$2;
 
 //# sourceMappingURL=es6-promise.map
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(7)))
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
-
-/***/ }),
-/* 195 */,
-/* 196 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _numeral = __webpack_require__(19);
-
-var _numeral2 = _interopRequireDefault(_numeral);
-
-var _util = __webpack_require__(11);
-
-var _created_by = __webpack_require__(197);
-
-var _created_by2 = _interopRequireDefault(_created_by);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var TVCard = function (_React$Component) {
-  _inherits(TVCard, _React$Component);
-
-  function TVCard(props) {
-    _classCallCheck(this, TVCard);
-
-    return _possibleConstructorReturn(this, (TVCard.__proto__ || Object.getPrototypeOf(TVCard)).call(this, props));
-  }
-
-  _createClass(TVCard, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.tv.backdrop) {
-        document.body.style.backgroundImage = 'url(http://image.tmdb.org/t/p/original' + nextProps.tv.backdrop + ')';
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      if (this.props.tv) {
-        var noData = "N/A";
-        var tv = this.props.tv;
-        var name = tv.name,
-            poster = tv.poster,
-            overview = tv.overview,
-            createdBy = tv.createdBy,
-            genres = tv.genres,
-            firstAired = tv.firstAired,
-            lastAired = tv.lastAired,
-            runTime = tv.runTime,
-            networks = tv.networks,
-            productionCompanies = tv.productionCompanies,
-            seasons = tv.seasons,
-            rating = tv.rating;
-
-
-        poster = 'https://image.tmdb.org/t/p/w300' + poster;
-
-        if (firstAired) {
-          firstAired = (0, _util.dateHelper)(firstAired);
-        } else {
-          firstAired = noData;
-        }
-
-        if (lastAired) {
-          lastAired = (0, _util.dateHelper)(lastAired);
-        } else {
-          lastAired = noData;
-        }
-
-        if (runTime) {
-          runTime = runTime[0] + " minutes";
-        } else {
-          runTime = noData;
-        }
-
-        if (rating) {
-          rating += " / 10";
-        } else {
-          rating = noData;
-        }
-
-        if (seasons.length === 0) {
-          seasons = noData;
-        }
-
-        genres = genres.map(function (genre, idx) {
-          return _react2.default.createElement(
-            'span',
-            { key: 'genre-' + idx, className: 'genre' },
-            genre
-          );
-        });
-
-        networks = networks.map(function (network, idx) {
-          return _react2.default.createElement(
-            'span',
-            { key: 'network-' + idx, className: 'genre' },
-            network
-          );
-        });
-
-        return _react2.default.createElement(
-          'div',
-          { className: 'card-main' },
-          _react2.default.createElement('img', { className: 'card-poster', src: '' + poster }),
-          _react2.default.createElement(
-            'div',
-            { className: 'card-details' },
-            _react2.default.createElement(
-              'div',
-              { className: 'card-header' },
-              _react2.default.createElement(
-                'div',
-                { className: 'card-title' },
-                name
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'tv-header-details' },
-                _react2.default.createElement(
-                  'span',
-                  null,
-                  'First Aired: ',
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    firstAired
-                  )
-                ),
-                _react2.default.createElement(
-                  'span',
-                  null,
-                  'Last Aired: ',
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    lastAired
-                  )
-                ),
-                _react2.default.createElement(
-                  'span',
-                  null,
-                  'Runtime: ',
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    runTime
-                  )
-                ),
-                _react2.default.createElement(
-                  'span',
-                  null,
-                  'Rating: ',
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    rating
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'card-overview' },
-                overview
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'card-col-container' },
-              _react2.default.createElement(
-                'div',
-                { className: 'card-col' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'card-property-wrapper' },
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'property-label' },
-                    'Networks:'
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'property' },
-                    networks
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'card-col' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'card-property-wrapper' },
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'property-label' },
-                    'Seasons:'
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'property' },
-                    seasons.length
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'card-col' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'card-property-wrapper' },
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'property-label' },
-                    'Genres:'
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'genre-wrap' },
-                    genres
-                  )
-                )
-              )
-            ),
-            _react2.default.createElement(_created_by2.default, { createdBy: createdBy })
-          )
-        );
-      } else {
-        return _react2.default.createElement('div', null);
-      }
-    }
-  }]);
-
-  return TVCard;
-}(_react2.default.Component);
-
-exports.default = TVCard;
-
-/***/ }),
-/* 197 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var CreatedBy = function CreatedBy(props) {
-  var knownFor = props.createdBy.map(function (el) {
-    return {
-      id: el.id,
-      value: el.name,
-      poster: 'https://image.tmdb.org/t/p/w300' + el.profile_path
-    };
-  }).map(function (el2, idx) {
-    return _react2.default.createElement(
-      'div',
-      { key: 'knownFor-' + idx, className: 'actor-related-movies-wrap' },
-      _react2.default.createElement('img', { className: 'actor-movie-poster-pic', src: '' + el2.poster }),
-      _react2.default.createElement(
-        'span',
-        { className: 'actor-movie-poster-title' },
-        el2.value
-      )
-    );
-  });
-
-  return _react2.default.createElement(
-    'div',
-    { className: 'known-for-main-wrap' },
-    _react2.default.createElement(
-      'div',
-      { className: 'property-label' },
-      'Created By:'
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'actor-related-movies-container' },
-      knownFor
-    )
-  );
-};
-
-exports.default = CreatedBy;
 
 /***/ })
 /******/ ]);

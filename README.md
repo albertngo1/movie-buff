@@ -1,7 +1,14 @@
-# webpack-template
-An empty JS project with `webpack-dev-server` and `es2015-preset`
+# Movie Buff
 
-### Getting started
-1. `npm install`
-2. `npm start`
-3. visit `localhost:8080` on your browser
+[Live](http://ngoalbert.com/movie-buff/)
+
+## Background
+`Movie Buff` is a React application that uses a third party API to list information about different movies, actors, and TV shows.
+
+## Tech
+
+- React
+- jQuery
+- fetch
+- typeahead.js + bloodhound
+- API: [The Movie Database](https://www.themoviedb.org/documentation/api)

@@ -74,7 +74,7 @@ class App extends React.Component {
 
   render() {
     return(
-      <div className="main-wrapper">
+      <div>
         <Search searchTypeSelect={this.searchTypeSelect}
           searchType={this.state.searchType}
           fetchId={(id) => this.fetchId(id)}

@@ -4,9 +4,6 @@
     margin:0;
     height: 100%
 }
-.main-wrapper {
-  padding-top: 2em;
-}
 
 .card-main {
   display: flex;
