@@ -28,7 +28,7 @@
   border: 2px white solid;
   height: inherit;
   width: 600px;
-  height: 506px;
+  min-height: 506px;
   display: flex;
   flex-direction: column;
 }
@@ -39,13 +39,13 @@
 
 .card-title {
   font-family: 'Bungee', cursive;
-  font-size: 2.5vw;
+  font-size: 37px;
   text-shadow: 1px rgb(246, 246, 246);
 }
 
 .card-tagline {
   font-family: 'Lora';
-  font-size: 1.6vw;
+  font-size: 18px;
   color: rgb(71, 255, 79);
   margin-bottom: 5px;
   font-style: italic;
@@ -53,7 +53,7 @@
 
 .card-overview {
   font-family: 'Roboto';
-  font-size: 1.1vw;
+  font-size: 14px;
 }
 
 .card-property-wrapper {
@@ -66,14 +66,14 @@
 .property-label {
   font-family: 'Lora';
   text-shadow: 1px white;
-  font-size: 1.2vw;
+  font-size: 16px;
   margin-bottom: 3px;
   width: auto;
 }
 
 .property {
   color: rgb(71, 255, 79);
-  font-size: 1.3vw;
+  font-size: 18px;
   margin-bottom: 4px;
 }
 
@@ -91,7 +91,7 @@
 .genre {
   font-family: 'Roboto';
   color: rgb(71, 255, 79);
-  font-size: 1.3vw;
+  font-size: 18px;
   background-color: rgba(255, 255, 255, 0.3);
   border: 1px rgba(255, 255, 255, 0.3) solid;
   padding-left: 2px;
@@ -120,7 +120,7 @@
   color: rgb(71, 255, 79);
   font-family: 'Lora';
   text-shadow: 1px white;
-  font-size: 1.2vw;
+  font-size: 16px;
   font-weight: bolder;
 }
 .actor-property-wrapper {
@@ -159,7 +159,7 @@
 }
 .actor-related-movies-label {
   padding-bottom: 5px;
-  font-size: 1.2vw;
+  font-size: 16px;
 }
 .known-for-main-wrap {
   display: flex;
